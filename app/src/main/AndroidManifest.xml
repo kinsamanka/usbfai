@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="link.a0ptr.usbfai">
+
+    <uses-sdk android:minSdkVersion="19" />
+
+    <uses-feature android:name="android.hardware.usb.host" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_label"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter><intent-filter>
+            <action android:name="link.a0ptr.usbfai.action.TRANSMIT" />
+            <action android:name="link.a0ptr.usbfai.action.RECEIVE" />
+
+            <category android:name="android.intent.category.Default" />
+        </intent-filter>
+        <intent-filter>
+            <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+        </intent-filter>
+
+        <meta-data
+            android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+            android:resource="@xml/device_filter" />
+
+        </activity>
+
+        <service
+            android:name=".UsbfaiService"
+            android:exported="false"></service>
+    </application>
+
+</manifest>

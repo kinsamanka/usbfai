@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="link.a0ptr.usbfai.MainActivity"
+    tools:showIn="@layout/activity_main"
+    android:orientation="vertical">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:text="@string/textDriverName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/driverName"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+            <TextView
+                android:id="@+id/driverTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:text="@string/testDeviceID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/deviceID"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+            <TextView
+                android:id="@+id/deviceTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <View
+        android:id="@+id/separator1"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#eeeeee"/>
+
+    <TextView
+        android:text="@string/textPortSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+    <View
+        android:id="@+id/separator2"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#eeeeee"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="@string/textBaudRate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/baudRate"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:layout_marginStart="@dimen/activity_horizontal_margin" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerBaudRate"
+                android:entries="@array/baudRateItems"
+                android:layout_marginStart="@dimen/activity_horizontal_margin" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="@string/textDataBits"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dataBits"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:layout_marginStart="@dimen/activity_horizontal_margin" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerDataBits"
+                android:entries="@array/dataBitsItems"
+                android:layout_marginStart="@dimen/activity_horizontal_margin" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="@string/textStopBits"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/stopBits"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:layout_marginStart="@dimen/activity_horizontal_margin" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerStopBits"
+                android:entries="@array/stopBitsItems"
+                android:layout_marginStart="@dimen/activity_horizontal_margin" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="@string/textParity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/Parity"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:layout_marginStart="@dimen/activity_horizontal_margin" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinnerParity"
+                android:entries="@array/parityItems"
+                android:layout_marginStart="@dimen/activity_horizontal_margin" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:text="@string/textDTR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:layout_marginStart="@dimen/activity_horizontal_margin" />
+
+            <CheckBox
+                android:text="@string/textBtnDTR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkBoxDTR"
+                android:layout_marginStart="@dimen/activity_horizontal_margin" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:text="@string/textRTS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:layout_marginStart="@dimen/activity_horizontal_margin" />
+
+            <CheckBox
+                android:text="@string/textBtnRTS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkBoxRTS"
+                android:layout_marginStart="@dimen/activity_horizontal_margin" />
+        </TableRow>
+    </TableLayout>
+
+
+    <View
+        android:id="@+id/separator3"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#eeeeee" />
+
+</LinearLayout>

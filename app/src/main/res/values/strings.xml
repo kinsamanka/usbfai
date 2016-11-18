@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">USBFAI</string>
+    <string name="app_label">USB-Serial Bridge for AI</string>
+    <string name="action_settings">Port Settings</string>
+    <string name="action_exit">Exit</string>
+    <string name="textBtnDTR">Data Terminal Ready</string>
+    <string name="textBtnRTS">Request To Send</string>
+    <string name="textDTR">DTR</string>
+    <string name="textRTS">RTS</string>
+    <string name="textBaudRate">Baud Rate</string>
+    <string name="textDataBits">Data Bits</string>
+    <string name="textStopBits">Stop Bits</string>
+    <string name="textParity">Parity</string>
+    <string name="textConnect">Connect</string>
+    <string name="textPortSettings">Port Settings:</string>
+    <string name="textLog">Log</string>
+    <string name="textDriverName">Driver:</string>
+    <string name="testDeviceID">Device:</string>
+</resources>
