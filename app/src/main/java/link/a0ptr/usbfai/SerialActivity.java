@@ -75,7 +75,7 @@ public class SerialActivity extends Activity {
             } else {
 
                 if (action.equals(Constants.ACTION_TRANSMIT)) {
-                    SerialService.transmit(this, intent.getDataString());
+                    SerialService.transmit(this, intent.getDataString().replaceAll("[\n\r]", "") + "\n");
                     setResult(RESULT_OK);
 
                 } else if (action.equals(Constants.ACTION_RECEIVE)) {
@@ -98,7 +98,7 @@ public class SerialActivity extends Activity {
 
         if (requestCode == REQUEST_TX) {
             if (resultCode == RESULT_OK)
-                SerialService.transmit(this, txData);
+                SerialService.transmit(this, txData.replaceAll("[\n\r]", "") + "\n");
             setResult(resultCode);
 
         } else if (requestCode == REQUEST_RX) {
@@ -116,7 +116,7 @@ public class SerialActivity extends Activity {
 
     private static Intent rxIntent() {
         Bundle bundle = new Bundle();
-        bundle.putString("APP_INVENTOR_RESULT", SerialService.receive());
+        bundle.putString("APP_INVENTOR_RESULT", SerialService.receive().replaceAll("[\n\r]", ""));
         Intent intent = new Intent();
         intent.putExtras(bundle);
         return intent;
