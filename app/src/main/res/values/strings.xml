@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">USBFAI</string>
-    <string name="app_label">USB-Serial Bridge for AI</string>
+    <string name="app_label">USB-Serial Bridge for MIT AI2</string>
     <string name="action_settings">Port Settings</string>
     <string name="action_exit">Exit</string>
     <string name="textBtnDTR">Data Terminal Ready</string>
@@ -12,8 +12,10 @@
     <string name="textStopBits">Stop Bits</string>
     <string name="textParity">Parity</string>
     <string name="textConnect">Connect</string>
-    <string name="textPortSettings">Port Settings:</string>
+    <string name="textPortSettings">Settings</string>
     <string name="textLog">Log</string>
-    <string name="textDriverName">Driver:</string>
-    <string name="testDeviceID">Device:</string>
+    <string name="textDriverName">Driver</string>
+    <string name="testDeviceID">Device</string>
+    <string name="textStart">Start</string>
+    <string name="textStop">Stop</string>
 </resources>

@@ -5,6 +5,7 @@ class Constants {
     public final static String ACTION_RECEIVE = "link.a0ptr.usbfai.action.RECEIVE";
     public final static String ACTION_TRANSMIT = "link.a0ptr.usbfai.action.TRANSMIT";
     public final static String ACTION_UPDATE = "link.a0ptr.usbfai.action.UPDATE";
+    public final static String ACTION_UPDATE_DEVICE = "link.a0ptr.usbfai.action.UPDATE_DEVICE";
     public final static String ACTION_STATUS = "link.a0ptr.usbfai.action.STATUS";
 
     public final static String EXTRA_DATA = "link.a0ptr.usbfai.extra.DATA";

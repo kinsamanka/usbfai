@@ -29,8 +29,8 @@ import com.hoho.android.usbserial.driver.UsbSerialProber;
 import com.hoho.android.usbserial.util.HexDump;
 import com.hoho.android.usbserial.util.SerialInputOutputManager;
 
-public class UsbfaiService extends Service {
-    private final static String TAG = "UsbfaiService";
+public class SerialService extends Service {
+    private final static String TAG = "SerialService";
     private final static boolean DEBUG = true;
 
     private static UsbSerialPort sPort = null;
@@ -39,7 +39,7 @@ public class UsbfaiService extends Service {
     private final ExecutorService mExecutor = Executors.newSingleThreadExecutor();
     private SerialInputOutputManager mSerialIoManager;
 
-    private final static ArrayBlockingQueue<String> sBuffer = new ArrayBlockingQueue<>(8);
+    private final static ArrayBlockingQueue<String> sBuffer = new ArrayBlockingQueue<>(4);
     private static LocalBroadcastManager sLocalBroadcastManager = null;
 
     private final SerialInputOutputManager.Listener mListener =
@@ -117,9 +117,9 @@ public class UsbfaiService extends Service {
         return (sPort != null);
     }
 
-    public static void startService(Context context , UsbDevice device, int baud, int data, int stop,
+    public static void startService(Context context, UsbDevice device, int baud, int data, int stop,
                                     int parity, boolean dtr, boolean rts) {
-        Intent intent = new Intent(context, UsbfaiService.class);
+        Intent intent = new Intent(context, SerialService.class);
         intent.setAction(Constants.ACTION_CONNECT);
         if (device != null) intent.putExtra(Constants.EXTRA_PARAM1, device);
         int[] settings = {baud, data, stop, parity, (dtr) ? 1 : 0, (rts) ? 1 : 0};
@@ -129,7 +129,7 @@ public class UsbfaiService extends Service {
 
     public static void transmit(Context context , String data){
         if (!data.isEmpty()) {
-            Intent intent = new Intent(context, UsbfaiService.class);
+            Intent intent = new Intent(context, SerialService.class);
             intent.setAction(Constants.ACTION_TRANSMIT);
             intent.putExtra(Constants.EXTRA_PARAM1, data);
             context.startService(intent);
@@ -312,7 +312,7 @@ public class UsbfaiService extends Service {
         }
 
         // obtain permission to use the usb device
-        final Intent startIntent = new Intent(this, UsbfaiService.class);
+        final Intent startIntent = new Intent(this, SerialService.class);
         final PendingIntent mPendingIntent = PendingIntent.getService(this, 0, startIntent, 0);
         final UsbManager mUsbManager = (UsbManager) getSystemService(Context.USB_SERVICE);
         mUsbManager.requestPermission(device, mPendingIntent);
