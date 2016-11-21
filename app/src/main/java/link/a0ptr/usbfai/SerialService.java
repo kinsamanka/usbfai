@@ -154,11 +154,11 @@ public class SerialService extends Service {
         if (sPort != null) {
             if (Constants.ACTION_TRANSMIT.equals(action)) {
                 final String param = intent.getStringExtra(Constants.EXTRA_PARAM1);
-                mSerialIoManager.writeAsync(param.getBytes());
-
-            } else if (Constants.ACTION_RECEIVE.equals(action)) {
-                final String param = intent.getStringExtra(Constants.EXTRA_PARAM1);
-                // TODO:
+                try {
+                    sPort.write(param.getBytes(), 200);
+                } catch (IOException e) {
+                    // ignore error
+                }
             }
 
             // try connecting
